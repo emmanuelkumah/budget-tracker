@@ -1,5 +1,8 @@
 .home__hero-section {
-  color: #fff;
+  font-size: 5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #160f29;
   padding: 160px 0;
 }
 
@@ -32,7 +35,7 @@
 }
 
 .top-line {
-  color: #f00946;
+  color: #160f29;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -44,23 +47,25 @@
 .heading {
   margin-bottom: 24px;
   font-size: 48px;
-  line-height: 1.1;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #f7f8fa;
+  line-height: 1.1;
+  color: #1b8382;
 }
 
 .dark {
-  color: #1c2237;
+  color: #effffe;
 }
 
 .darkBg {
-  background-color: #1c2237;
+  background-color: #effffe;
 }
 
 .home__hero-subtitle {
   max-width: 440px;
   margin-bottom: 35px;
-  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
   line-height: 24px;
 }
 

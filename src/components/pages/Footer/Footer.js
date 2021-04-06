@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-// import { Button } from "../../Button";
 import { Link } from "react-router-dom";
 import {
   FaFacebook,
@@ -9,8 +8,8 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
-import { MdFingerprint } from "react-icons/md";
 import { Button } from "../../Button/Button";
+import { GiTakeMyMoney } from "react-icons/gi";
 
 function Footer() {
   return (
@@ -73,11 +72,11 @@ function Footer() {
         <div className="social-media-wrap">
           <div className="footer-logo">
             <Link to="/" className="social-logo">
-              <MdFingerprint className="navbar-icon" />
-              LAVISH
+              <GiTakeMyMoney className="navbar-icon" />
+              BUDGETN
             </Link>
           </div>
-          <small className="website-rights">LAVISH © 2020</small>
+          <small className="website-rights">BUDGETN © 2021</small>
           <div className="social-icons">
             <Link
               className="social-icon-link"

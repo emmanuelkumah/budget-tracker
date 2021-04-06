@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import { Button } from ".Button/Button";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { MdFingerprint } from "react-icons/md";
-// import { GiTakeMyMoney } from "react-icons/gi";
-
+import { GiTakeMyMoney } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { Button } from "../Button/Button";
@@ -38,8 +35,8 @@ function NavBar() {
         <nav className="navbar">
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-              <MdFingerprint className="navbar-icon" />
-              LAVISH
+              <GiTakeMyMoney className="navbar-icon" />
+              BUDGETN
             </Link>
             <div className="menu-icon" onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}

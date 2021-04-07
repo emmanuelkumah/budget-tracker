@@ -19,7 +19,7 @@ function HeroSection({
   return (
     <>
       <div
-        className={lightBg ? "home__hero-section" : "home__hero-section darkBg"}
+        className={lightBg ? "home__hero-section" : "home__hero-section altBg"}
       >
         <div className="container">
           <div

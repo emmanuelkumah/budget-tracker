@@ -4,6 +4,7 @@
   font-weight: 300;
   color: #160f29;
   padding: 160px 0;
+  background-color: #effffe;
 }
 
 .home__hero-row {
@@ -54,11 +55,11 @@
 }
 
 .dark {
-  color: #effffe;
+  color: #1b8382;
 }
 
-.darkBg {
-  background-color: #effffe;
+.altBg {
+  background-color: #fff;
 }
 
 .home__hero-subtitle {

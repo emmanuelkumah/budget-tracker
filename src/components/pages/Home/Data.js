@@ -1,6 +1,6 @@
 //define all the values homeObjOne
 export const homeObjOne = {
-  lightBg: false,
+  lightBg: true,
   lightText: true,
   lightTextDesc: true,
   topLine: "Experience a fresh way to manage money",
@@ -27,13 +27,13 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  lightBg: true,
+  lightBg: false,
   lightText: false,
   lightTextDesc: false,
   topLine: "EASY SETUP",
-  headline: "Super fast and simple onboarding process",
+  headline: "Stay focussed on your financial goals",
   description:
-    "Get everything set up and ready in under 10 minutes. All you need to do is add your information and you're ready to go.",
+    "See where all your money goes by easily adding your credit card details all you need to do is add your information and you're ready to go.",
   buttonLabel: "Find Out More",
   imgStart: "start",
   img: "images/svg-2.svg",

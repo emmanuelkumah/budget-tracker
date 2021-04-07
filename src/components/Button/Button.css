@@ -1,5 +1,5 @@
 :root {
-  --primary: #fff;
+  --primary: #8dd06f;
 }
 
 .btn {
@@ -13,7 +13,7 @@
 
 .btn--primary {
   background-color: var(--primary);
-  color: #242424;
+  color: #fff;
   border: 1px solid var(--primary);
 }
 
@@ -77,8 +77,8 @@
   width: 100%;
 }
 
-.blue {
-  background-color: #276afb;
+.teal {
+  background-color: #1b8382;
   color: #fff;
   border: none;
 }

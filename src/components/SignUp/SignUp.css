@@ -1,0 +1,110 @@
+/* Sign up page */
+
+.login {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  /* background: #e9e9e9; */
+  display: flex;
+}
+
+.login .loginContainer {
+  padding: 60px;
+  margin: auto;
+  width: 100%;
+  max-width: 520px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(90deg, #44a08d 0%, #093637 100%);
+  box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+}
+
+.login .loginContainer label {
+  color: white;
+  margin: 14px 0;
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.login .loginContainer input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.login .loginContainer .btnContainer {
+  width: 100%;
+  padding: 24px 0;
+}
+
+.login .loginContainer .btnContainer p {
+  margin: 14px 0 0 0;
+  text-align: right;
+  color: #fff;
+}
+.form-toggle {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.form-toggle button {
+  width: 50%;
+  float: left;
+  padding: 1.2em;
+  margin-bottom: 1.5em;
+  border: none;
+  transition: 0.2s;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: #aceb98;
+}
+button.toggleSignUp {
+  background-color: #8dd06f;
+  border-color: #ffffff;
+}
+button.toggleSignUp:hover {
+  background-color: #820933;
+  color: #fff;
+}
+button.toggleSignIn:hover {
+  background-color: #820933;
+  color: #fff;
+}
+
+.signUp {
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #222;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background: #8dd06f;
+  cursor: pointer;
+}
+.signUp:hover {
+  background: #820933;
+  color: #fff;
+}
+
+.login .loginContainer .btnContainer p span:hover {
+  color: red;
+}
+
+.login .loginContainer .errorMsg {
+  color: red;
+  font-size: 16px;
+}

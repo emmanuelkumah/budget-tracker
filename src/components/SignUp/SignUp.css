@@ -82,7 +82,8 @@ button.toggleSignIn:hover {
   color: #fff;
 }
 
-.signUp {
+.signUp,
+.signIn {
   border: none;
   border-radius: 50px;
   outline: none;
@@ -95,7 +96,8 @@ button.toggleSignIn:hover {
   background: #8dd06f;
   cursor: pointer;
 }
-.signUp:hover {
+.signUp:hover,
+.signIn:hover {
   background: #820933;
   color: #fff;
 }

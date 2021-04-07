@@ -1,28 +1,87 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+
 import "./SignUp.css";
-function SignUp() {
+function SignUp({
+  name,
+  setName,
+  user,
+  setUser,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  emailError,
+  setEmailError,
+  passwordError,
+  setPasswordError,
+  signInWithGoogle,
+  handleSignUp,
+  handleSignIn,
+  handleLogOut,
+  hasAccount,
+  setHasAccount,
+}) {
   const [signUp, setSignUp] = useState(true);
+
+  const [redirect, setredirect] = useState(null);
+
+  //redirect user to dashboard if logged in
+
+  useEffect(() => {
+    if (user) {
+      setredirect("/dashboard");
+    }
+  }, [user]);
+  if (redirect) {
+    return <Redirect to={redirect} />;
+    // setredirect(null);
+  }
   return (
     <section className="login">
       <div className="loginContainer">
         <div className="form-toggle">
-          <button className="toggleSignUp">Sign Up</button>
-          <button className="toggleSignIn">Sign In</button>
+          <button className="toggleSignUp" onClick={() => setSignUp(true)}>
+            Sign Up
+          </button>
+          <button className="toggleSignIn" onClick={() => setSignUp(false)}>
+            Sign In
+          </button>
         </div>
         {signUp ? (
           <div>
-            <label>User Name</label>
-            <input type="text" autoFocus required value="" />
+            <label>Full Name</label>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
             <label>Email</label>
-            <input type="text" autoFocus required value="" />
-            <p className="errorMsg"></p>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <p className="errorMsg">{emailError}</p>
             <label>Password</label>
-            <input type="text" autoFocus required />
-            <p className="errorMsg"></p>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <p className="errorMsg">{passwordError}</p>
             <div className="btnContainer">
-              <button className="signUp">Sign Up</button>
+              <button className="signUp" onClick={handleSignUp}>
+                Sign Up
+              </button>
             </div>
-            <button className="signUp">
+            <button className="signUp" onClick={signInWithGoogle}>
               <img
                 src="https://img.icons8.com/ios-filled/50/000000/google-logo.png"
                 alt="google icon"
@@ -37,22 +96,24 @@ function SignUp() {
               type="text"
               autoFocus
               required
-              //   value={email}
-              //   onChange={(event) => setEmail(event.target.value)}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
-            <p className="errorMsg"></p>
+            <p className="errorMsg">{emailError}</p>
 
             <label>Password</label>
             <input
               type="text"
               autoFocus
               required
-              //   value={password}
-              //   onChange={(event) => setPassword(event.target.value)}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
             />
-            <p className="errorMsg"></p>
+            <p className="errorMsg">{passwordError}</p>
             <div className="btnContainer">
-              <button className="logIn">Log In </button>
+              <button className="signIn" onClick={handleSignIn}>
+                Log In{" "}
+              </button>
             </div>
           </div>
         )}

@@ -42,6 +42,8 @@ function Dashboard({ user, handleLogOut }) {
                 src="https://source.unsplash.com/PK_t0Lrh7MM"
                 className="intro_img"
                 alt="intro-user"
+                width="90px"
+                height="90px"
               />
               <div className="intro_message">
                 <h2>Hi , {user.displayName}</h2>

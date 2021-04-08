@@ -22,7 +22,7 @@ function IncomeExpense({ transactions }) {
 
   return (
     <div>
-      <section className="inc-expense">
+      <section className="income-expense">
         <div className="income">
           <p>Income</p>
           <h3 className="money plus">+${totalIncome}</h3>

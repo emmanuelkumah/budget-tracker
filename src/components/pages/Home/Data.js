@@ -3,7 +3,7 @@ export const homeObjOne = {
   lightBg: true,
   lightText: true,
   lightTextDesc: true,
-  topLine: "Experience a fresh way to manage money",
+  topLine: "Plan What to do with each dime",
   headline: "Experience a fresh way to manage money",
   buttonLabel: "Get Started",
   imgStart: "",

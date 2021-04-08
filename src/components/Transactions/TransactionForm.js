@@ -20,16 +20,18 @@ function TransactionForm({ transactions, setTransactions }) {
     <div>
       <form onSubmit={handleFormSubmit}>
         <div className="form-control">
-          <label htmlFor="text">Item</label>
+          <label htmlFor="text" className="item__label">
+            Item
+          </label>
           <input
             type="text"
-            placeholder="Enter  item"
+            placeholder="Enter item"
             value={item}
             onChange={(event) => setItem(event.target.value)}
           />
         </div>
         <div className="form-control">
-          <label htmlFor="amount">
+          <label htmlFor="amount" className="amt__label">
             Amount <br /> (income +, expense -)
           </label>
           <input

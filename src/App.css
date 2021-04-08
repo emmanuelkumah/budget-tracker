@@ -46,9 +46,9 @@ main {
   padding: 10px 30px;
 }
 .intro_img {
+  max-width: 100%;
+  display: block;
   margin-top: 10px;
-  width: 70px;
-  height: 70px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
@@ -84,13 +84,15 @@ p {
 
 /* Form Styling */
 form {
-  margin: 60px;
+  margin: 40px;
 }
-label {
+.amt__label,
+.item__label {
   display: inline-block;
   margin: 10px 0;
-  font-weight: 300;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2b2d42;
 }
 input[type="text"],
 input[type="number"] {
@@ -133,7 +135,7 @@ input[type="number"] {
   padding: 20px 30px;
 }
 
-.inc-expense {
+.income-expense {
   display: flex;
   background: #fff;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
@@ -212,10 +214,8 @@ input[type="number"] {
   outline: none;
   vertical-align: middle;
   padding: 12px 24px;
-  /* border: 1px solid #a12727; */
   border-radius: 8px;
   background: #ef233c;
-  /* width: 100px; */
   font-size: 1.2rem;
   color: #fff;
 }
@@ -223,4 +223,68 @@ input[type="number"] {
 .app__logout:focus {
   background: linear-gradient(90deg, #44a08d 0%, #093637 100%);
   transition: 0.3s all ease;
+}
+
+/* Media Queries */
+/* Extra small devices (portait phones) */
+@media only screen and (max-width: 575.98px) and (min-width: 351px) {
+  .app__container {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+  .income,
+  .expenses {
+    width: 100px;
+    border-left: 2px solid #2b2d42;
+    margin: 10px 50px;
+  }
+  form {
+    margin: 10px;
+  }
+  .form-btn {
+    margin: 20px;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+  }
+  input[type="text"],
+  input[type="number"] {
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 100%;
+  }
+  .app__logout {
+    margin-top: 20px;
+    padding: 10px 14px;
+  }
+}
+
+/* small devices (landscape phones)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .app__container {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+  form {
+    margin: 10px;
+  }
+}
+/* tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .app__container {
+    width: 80vw;
+    margin: 5rem auto;
+  }
+  form {
+    margin: 10px;
+  }
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .app__container {
+    width: 50vw;
+    margin: 5rem auto;
+  }
+  form {
+    margin: 10px;
+  }
 }

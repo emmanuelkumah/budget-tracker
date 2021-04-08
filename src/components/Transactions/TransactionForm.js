@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../App.css";
 
 function TransactionForm({ transactions, setTransactions }) {
   const [item, setItem] = useState("");

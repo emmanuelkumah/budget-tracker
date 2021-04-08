@@ -9,8 +9,8 @@ import TransactionList from "../../Transactions/TransactionList";
 function Dashboard({ user, handleLogOut }) {
   //define the initial state
   const initialState = [
-    { id: 1, item: "Grocery", amount: 20 },
-    { id: 2, item: "Transportation", amount: 50 },
+    // { id: 1, item: "Grocery", amount: 20 },
+    // { id: 2, item: "Transportation", amount: 50 },
   ];
 
   const [transactions, setTransactions] = useState(initialState);
@@ -41,7 +41,7 @@ function Dashboard({ user, handleLogOut }) {
               <img
                 src="https://source.unsplash.com/PK_t0Lrh7MM"
                 className="intro_img"
-                alt="intro image"
+                alt="intro-user"
               />
               <div className="intro_message">
                 <h2>Hi , {user.displayName}</h2>
@@ -60,7 +60,9 @@ function Dashboard({ user, handleLogOut }) {
             transactions={transactions}
             setTransactions={setTransactions}
           />
-          <button onClick={redirect}>Log out</button>
+          <button onClick={redirect} className="app__logout">
+            Log out
+          </button>
         </section>
       </main>
     </>

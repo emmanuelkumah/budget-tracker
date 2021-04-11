@@ -1,18 +1,29 @@
 import React, { useState } from "react";
+import firebase from "firebase";
+import fire from "../../services/firebase";
 
-function TransactionForm({ transactions, setTransactions }) {
+function TransactionForm({ transactions, setTransactions, userId }) {
   const [item, setItem] = useState("");
   const [amount, setAmount] = useState(0);
 
   //submit form
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    //pass the input field values to the transaction array
-    setTransactions([
-      ...transactions, //grab all the values of the transaction
-      { id: Math.floor(Math.random() * 100), item: item, amount: +amount }, // add new transaction object
-    ]);
-    //clear input fields
+    fire
+      .firestore()
+      .collection("users")
+      .doc(userId)
+      .collection("transactions")
+      .add({
+        item: item,
+        amount: +amount,
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      .then((ref) => {
+        console.log("Added doc with ID: ", ref.id);
+      });
+
+    // //clear input fields
     setItem("");
     setAmount(0);
   };

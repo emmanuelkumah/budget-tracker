@@ -1,26 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Balance from "../../Transactions/Balance";
 import TransactionForm from "../../Transactions/TransactionForm";
 import "../../../App.css";
 import IncomeExpense from "../../Transactions/IncomeExpense";
 import TransactionList from "../../Transactions/TransactionList";
+import fire from "../../../services/firebase";
 
 function Dashboard({ user, handleLogOut }) {
   //define the initial state
-  const initialState = [
-    // { id: 1, item: "Grocery", amount: 20 },
-    // { id: 2, item: "Transportation", amount: 50 },
-  ];
+  const initialState = [];
 
-  const [transactions, setTransactions] = useState(initialState);
+  const [transactions, setTransactions] = useState([]);
+
+  //Access the db  and fetch the collection
+  useEffect(() => {
+    const unsubscribe = fire
+      .firestore()
+      .collection("users")
+      .doc(user.uid) // authenticated users' id
+      .collection("transactions")
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTransactions(data);
+      });
+  }, []);
 
   //remove a transction
   const removeTransaction = (id) => {
-    //filter the transactions
-    const results = transactions.filter((transaction) => transaction.id !== id);
-    //update the transactions with the results
-    setTransactions(results);
+    fire
+      .firestore()
+      .collection("users/{user.uid}/transactions")
+      .doc(id)
+      .delete();
   };
 
   //redirect user to home page after log out
@@ -46,8 +62,8 @@ function Dashboard({ user, handleLogOut }) {
                 height="90px"
               />
               <div className="intro_message">
-                <h2>Hi , {user.displayName}</h2>
-                <p>Here is your spending dashboard</p>
+                <h2>Hi, {user.displayName}</h2>
+                <p>Here is your transactions dashboard</p>
               </div>
             </div>
 
@@ -61,6 +77,7 @@ function Dashboard({ user, handleLogOut }) {
           <TransactionForm
             transactions={transactions}
             setTransactions={setTransactions}
+            userId={user.uid}
           />
           <button onClick={redirect} className="app__logout">
             Log out

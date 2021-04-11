@@ -57,7 +57,7 @@ function App() {
       .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         //log the user
-        console.log(userCredentials);
+        // console.log(userCredentials);
         //access the user
         let user = userCredentials.user;
         //update the user profile data
@@ -105,7 +105,7 @@ function App() {
   const handleLogOut = () => {
     fire.auth().signOut();
 
-    console.log("user has logged out");
+    // console.log("user has logged out");
   };
   // let history = useHistory();
   // const redirect = () => {
@@ -119,7 +119,7 @@ function App() {
       if (user) {
         clearInput();
         setUser(user);
-        console.log("the current user is ", user);
+        // console.log("the current user id ", user.uid);
       } else {
         // if user is sign out
         setUser("");

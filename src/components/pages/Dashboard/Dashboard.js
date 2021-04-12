@@ -6,6 +6,7 @@ import "../../../App.css";
 import IncomeExpense from "../../Transactions/IncomeExpense";
 import TransactionList from "../../Transactions/TransactionList";
 import fire from "../../../services/firebase";
+import userIcon from "./userIcon.png";
 
 function Dashboard({ user, handleLogOut }) {
   //define the initial state
@@ -26,6 +27,7 @@ function Dashboard({ user, handleLogOut }) {
           id: doc.id,
           ...doc.data(),
         }));
+        //update transaction state
         setTransactions(data);
       });
   }, []);
@@ -34,7 +36,9 @@ function Dashboard({ user, handleLogOut }) {
   const removeTransaction = (id) => {
     fire
       .firestore()
-      .collection("users/{user.uid}/transactions")
+      .collection("users")
+      .doc(user.uid)
+      .collection("transactions")
       .doc(id)
       .delete();
   };
@@ -55,7 +59,8 @@ function Dashboard({ user, handleLogOut }) {
           <header className="header__container">
             <div className="intro_container">
               <img
-                src="https://source.unsplash.com/PK_t0Lrh7MM"
+                src={userIcon}
+                // src="https://source.unsplash.com/PK_t0Lrh7MM"
                 className="intro_img"
                 alt="intro-user"
                 width="90px"

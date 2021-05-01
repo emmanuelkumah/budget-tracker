@@ -20,7 +20,7 @@ function App() {
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
 
-  //helps clear user inputs on submit
+  // clear user inputs on submit
   const clearInput = () => {
     setUser("");
     setEmail("");
@@ -33,7 +33,7 @@ function App() {
     setPasswordError("");
   };
 
-  //sign up user with Google option
+  //sign up user with Google account
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   const signInWithGoogle = () => {
     fire
@@ -56,8 +56,6 @@ function App() {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
-        //log the user
-        // console.log(userCredentials);
         //access the user
         let user = userCredentials.user;
         //update the user profile data
@@ -104,14 +102,7 @@ function App() {
   //log out user
   const handleLogOut = () => {
     fire.auth().signOut();
-
-    // console.log("user has logged out");
   };
-  // let history = useHistory();
-  // const redirect = () => {
-  //   handleLogOut();
-  //   history.push("/");
-  // };
 
   //get the  user's  authentication state
   const authListener = () => {
@@ -119,7 +110,6 @@ function App() {
       if (user) {
         clearInput();
         setUser(user);
-        // console.log("the current user id ", user.uid);
       } else {
         // if user is sign out
         setUser("");

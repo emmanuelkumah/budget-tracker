@@ -28,7 +28,7 @@ function TransactionForm({ transactions, setTransactions, userId }) {
     setAmount(0);
   };
   return (
-    <div>
+    <section>
       <form onSubmit={handleFormSubmit}>
         <div className="form-control">
           <label htmlFor="text" className="item__label">
@@ -56,7 +56,7 @@ function TransactionForm({ transactions, setTransactions, userId }) {
           Add Transaction
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 

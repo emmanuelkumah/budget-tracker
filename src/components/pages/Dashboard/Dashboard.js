@@ -10,7 +10,6 @@ import userIcon from "./userIcon.png";
 
 function Dashboard({ user, handleLogOut }) {
   //define the initial state
-  const initialState = [];
 
   const [transactions, setTransactions] = useState([]);
 
@@ -32,7 +31,7 @@ function Dashboard({ user, handleLogOut }) {
       });
   }, []);
 
-  //remove a transction
+  //remove a user's transction
   const removeTransaction = (id) => {
     fire
       .firestore()
@@ -60,7 +59,6 @@ function Dashboard({ user, handleLogOut }) {
             <div className="intro_container">
               <img
                 src={userIcon}
-                // src="https://source.unsplash.com/PK_t0Lrh7MM"
                 className="intro_img"
                 alt="intro-user"
                 width="90px"
@@ -68,7 +66,9 @@ function Dashboard({ user, handleLogOut }) {
               />
               <div className="intro_message">
                 <h2>Hi, {user.displayName}</h2>
-                <p>Here is your transactions dashboard</p>
+                <p className="intro-msg-subtext">
+                  Here is your transactions dashboard
+                </p>
               </div>
             </div>
 

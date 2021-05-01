@@ -45,6 +45,10 @@ main {
   margin: 10px;
   padding: 10px 30px;
 }
+.intro-msg-subtext {
+  font-weight: 300;
+  color: #310a31;
+}
 .intro_img {
   max-width: 100%;
   display: block;
@@ -117,14 +121,13 @@ input[type="number"] {
   font-size: 1.3rem;
   padding: 20px;
   box-shadow: 0px 10px 14px -7px #616174;
-
-  /* width: 50%; */
 }
 .form-btn:hover {
   background: linear-gradient(90deg, #44a08d 0%, #093637 100%);
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
   transition: 0.3s all ease;
 }
+/* End of Form-styling */
 
 /* Balance */
 .blc-container {
@@ -134,6 +137,11 @@ input[type="number"] {
   margin: 20px auto;
   padding: 20px 30px;
 }
+.blc-desc {
+  font-weight: 100;
+  color: #d6dbd2;
+}
+/* End of balance section  */
 
 .income-expense {
   display: flex;
@@ -235,7 +243,7 @@ input[type="number"] {
   .income,
   .expenses {
     width: 100px;
-    border-left: 2px solid #2b2d42;
+    padding-left: 10px;
     margin: 10px 50px;
   }
   form {

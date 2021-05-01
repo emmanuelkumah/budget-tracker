@@ -12,7 +12,7 @@ function Balance({ transactions }) {
     .toFixed(2);
   return (
     <div className="blc-container">
-      <p>Amount Available</p>
+      <p className="blc-desc">Amount Available</p>
       <h1>Your balance is ${totalAmount}</h1>
     </div>
   );

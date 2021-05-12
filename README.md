@@ -1,7 +1,5 @@
 # Budget Tracker App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Monitor your income and expenditure pattern
 ## Description 
 
 This app is to enable users track their finance and helps them understand their spendings for a much brighter financial future
